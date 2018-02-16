@@ -1,6 +1,5 @@
 from matplotlib import pyplot as plt
 import numpy as np
-from matplotlib import colors
 import math
 
 
@@ -31,9 +30,10 @@ def give_likelihood(frame_1, frame_2, x_pos, y_pos, velocity_x, velocity_y):
 
 def plot_map(map_prob):
     fig, ax = plt.subplots()
-    # ax.set_xticks([-2, -1, 0, 1, 2])
-    # ax.set_yticks([-2, -1, 0, 1, 2])
+    ticks = [-3, -2, -1, 0, 1, 2]
     plt.imshow(map_prob, cmap='gist_heat')
+    ax.set_xticklabels(ticks)
+    ax.set_yticklabels(ticks)
     plt.colorbar()
     plt.show()
 
