@@ -14,7 +14,7 @@ def give_posterior_map(likelihood_map, sigma_p, velocity):
 
 
 def give_prior(vel_x,vel_y, sigma_p):
-    norm = (vel_x**2 + vel_y**2)**0.5
+    norm = vel_x**2 + vel_y**2
     constant = 2*(sigma_p**2)
     exponent = -norm/constant
     prior = math.exp(-exponent)
