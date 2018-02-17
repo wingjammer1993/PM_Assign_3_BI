@@ -28,10 +28,11 @@ def give_likelihood(frame_1, frame_2, x_pos, y_pos, velocity_x, velocity_y):
     return likelihood_log
 
 
-def plot_map(map_prob):
+def plot_map(map_prob, title=''):
     fig, ax = plt.subplots()
     ticks = [-3, -2, -1, 0, 1, 2]
     plt.imshow(map_prob, cmap='gist_heat')
+    plt.title(title)
     ax.set_xticklabels(ticks)
     ax.set_yticklabels(ticks)
     plt.colorbar()
@@ -114,13 +115,13 @@ if __name__ == "__main__":
 
     vel = [-2, -1, 0, 1, 2]
     map_1 = plot_velocity_maps(np.array(exampleA1), np.array(exampleA2), vel)
-    plot_map(map_1)
+    plot_map(map_1, 'Unscaled log likelihood for A1, A2')
 
     map_2 = plot_velocity_maps(np.array(exampleB1), np.array(exampleB2), vel)
-    plot_map(map_2)
+    plot_map(map_2, 'Unscaled log likelihood for B1, B2')
 
     map_3 = plot_velocity_maps(np.array(exampleC1), np.array(exampleC2), vel)
-    plot_map(map_3)
+    plot_map(map_3, 'Unscaled log likelihood for C1, C2')
     print('done')
 
 
