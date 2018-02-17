@@ -104,3 +104,4 @@ if __name__ == "__main__":
     Task_ii_1.plot_map(scale_posterior3)
 
     print('done')
+
