@@ -98,7 +98,8 @@ if __name__ == "__main__":
     ]
 
     vel = [-2, -1, 0, 1, 2]
-    sig_p = 1.414
+    # sigma_sqr = 0.5 so, sigma_p = 1
+    sig_p = 1
     map_likelihood = Task_ii_1.plot_velocity_maps(np.array(exampleA1), np.array(exampleA2), vel)
     map_posterior = give_posterior_map(map_likelihood, sig_p, vel)
     Task_ii_1.plot_map(map_posterior)
