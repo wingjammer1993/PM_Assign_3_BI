@@ -53,6 +53,7 @@ if __name__ == "__main__":
     print('inferred direction of motion is : {}'.format(direction))
 
     # Task 3
+    stan_dev = 1
     prior = {'up': 1/8, 'down': 5/8, 'left': 1/8, 'right': 1/8}
     likelihood = give_likelihood(rxx, ryy, bxx, byy, stan_dev)
     posterior = {}
