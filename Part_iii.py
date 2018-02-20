@@ -39,6 +39,8 @@ if __name__ == "__main__":
     for k in likelihood:
         posterior[k] = likelihood[k]*prior
 
+    sum_post = sum(posterior.values())
+    posterior = {k: v / sum_post for k, v in posterior.items()}
     direction = max(posterior, key=lambda key: posterior[key])
     print('inferred direction of motion is : {}'.format(direction))
 
@@ -48,7 +50,8 @@ if __name__ == "__main__":
     posterior = {}
     for k in likelihood:
         posterior[k] = likelihood[k] * prior
-
+    sum_post = sum(posterior.values())
+    posterior = {k: v / sum_post for k, v in posterior.items()}
     direction = max(posterior, key=lambda key: posterior[key])
     print('inferred direction of motion is : {}'.format(direction))
 
@@ -59,7 +62,8 @@ if __name__ == "__main__":
     posterior = {}
     for k in likelihood:
         posterior[k] = likelihood[k]*prior[k]
-
+    sum_post = sum(posterior.values())
+    posterior = {k: v / sum_post for k, v in posterior.items()}
     direction = max(posterior, key=lambda key: posterior[key])
     print('inferred direction of motion is : {}'.format(direction))
 
@@ -69,7 +73,8 @@ if __name__ == "__main__":
     posterior = {}
     for k in likelihood:
         posterior[k] = likelihood[k]*prior[k]
-
+    sum_post = sum(posterior.values())
+    posterior = {k: v / sum_post for k, v in posterior.items()}
     direction = max(posterior, key=lambda key: posterior[key])
     print('inferred direction of motion is : {}'.format(direction))
 
