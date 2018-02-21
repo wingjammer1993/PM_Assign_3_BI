@@ -21,7 +21,7 @@ def give_likelihood(frame_1, frame_2, x_pos, y_pos, velocity_x, velocity_y):
     if 0 <= x_pos+velocity_x < 10 and 0 <= y_pos+velocity_y < 10:
         int_2 = frame_2[x_pos+velocity_x, y_pos+velocity_y]
     else:
-        int_2 = 0
+        int_2 = int_1
     exponent = ((int_1-int_2)**2)
     likelihood = math.exp(-exponent)
     likelihood_log = math.log(likelihood)
