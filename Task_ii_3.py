@@ -5,9 +5,10 @@ import math
 
 
 def normalize_posterior(posterior_map):
-    scaling_factor = math.frexp(np.prod(posterior_map))[0]
-    scaled_posterior_map = np.float64(np.subtract(posterior_map, scaling_factor))
-    return scaled_posterior_map
+    posterior = np.exp(posterior_map)
+    normalization_constant = np.sum(posterior)
+    normalized_posterior = np.divide(posterior_map, normalization_constant)
+    return normalized_posterior
 
 
 if __name__ == "__main__":
