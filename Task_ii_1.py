@@ -31,7 +31,7 @@ def give_likelihood(frame_1, frame_2, x_pos, y_pos, velocity_x, velocity_y):
 def plot_map(map_prob, title=''):
     fig, ax = plt.subplots()
     ticks = [-3, -2, -1, 0, 1, 2]
-    plt.imshow(map_prob, cmap='gist_heat')
+    plt.imshow(map_prob, cmap='afmhot')
     plt.title(title)
     ax.set_xticklabels(ticks)
     ax.set_yticklabels(ticks)

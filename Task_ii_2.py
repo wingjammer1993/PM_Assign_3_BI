@@ -13,7 +13,7 @@ def give_posterior_map(likelihood_map, sigma_p, velocity):
     prior_map = np.divide(prior_map, summation)
     # find log prior
     prior_map = np.log(prior_map)
-    #Task_ii_1.plot_map(prior_map)
+    Task_ii_1.plot_map(prior_map)
     # find log posterior
     log_posterior = np.add(prior_map, likelihood_map)
     return log_posterior

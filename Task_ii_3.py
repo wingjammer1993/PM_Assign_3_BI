@@ -7,7 +7,9 @@ import math
 def normalize_posterior(posterior_map):
     posterior = np.exp(posterior_map)
     normalization_constant = np.sum(posterior)
-    normalized_posterior = np.divide(posterior_map, normalization_constant)
+    normalized_posterior = np.divide(posterior, normalization_constant)
+    normalized_posterior = np.log(normalized_posterior)
+    print()
     return normalized_posterior
 
 
